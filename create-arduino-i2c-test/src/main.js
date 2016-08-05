@@ -16,13 +16,14 @@
 let Pins = require("pins");
 
 Pins.configure({
+		leftVoltage: 5,
 		arduino: {
 			require: "arduino",
 			pins: {
 				arduino: { sda: 51, clock: 52 },
 				ground: { pin: 53, type: "Ground" }
 			}
-		}
+		},
 	}, success => {
 		if (success) {
 			Pins.invoke("/arduino/write", 1000, function(){});
